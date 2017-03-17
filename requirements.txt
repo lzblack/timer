@@ -1,5 +1,5 @@
 Flask==0.12
 Jinja2==2.9.5
 Werkzeug==0.12.1
-gunicorn==18.0
+gunicorn==19.7
 gevent

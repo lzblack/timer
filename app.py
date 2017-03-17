@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import re
+
 from flask import Flask, render_template, url_for, redirect, request, flash
 
 app = Flask(__name__)
@@ -9,7 +10,7 @@ app.config['SECRET_KEY'] = 'a very secret string'
 
 @app.route('/')
 def index():
-    return redirect(url_for('timer', num=25*60))
+    return redirect(url_for('timer', num=25 * 60))
 
 
 @app.route('/<int:num>s')
@@ -35,12 +36,12 @@ def custom():
 
 @app.route('/<int:num>m')
 def minutes(num):
-    return redirect(url_for('timer', num=num*60))
+    return redirect(url_for('timer', num=num * 60))
 
 
 @app.route('/<int:num>h')
 def hours(num):
-    return redirect(url_for('timer', num=num*3600))
+    return redirect(url_for('timer', num=num * 3600))
 
 
 # todo pomodoro mode: loop a 25-5 minutes cycle

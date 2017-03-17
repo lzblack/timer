@@ -1,1 +1,2 @@
-web: gunicorn -k gevent app:app
+web: uwsgi uwsgi.ini
+

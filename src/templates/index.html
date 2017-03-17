@@ -1,33 +1,36 @@
-{% block head %}
-    <title></title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<html>
+<head>
+    {% block head %}
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
 
-    {% block scripts %}
-        <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
-        <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
-        <script>
-            var Minutes = {{ num }};
-        </script>
+        {% block scripts %}
+            <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+            <script src="{{ url_for('static', filename='js/timer.js') }}"></script>
+            <script>
+                var Minutes = {{ num }};
+            </script>
 
 
-        <script type="text/javascript">
-            function parseQuote(response) {
-                document.getElementById("quote").innerHTML = response.quoteText;
-                document.getElementById("author").innerHTML = response.quoteAuthor;
-            }
-        </script>
+            <script type="text/javascript">
+                function parseQuote(response) {
+                    document.getElementById("quote").innerHTML = response.quoteText;
+                    document.getElementById("author").innerHTML = response.quoteAuthor;
+                }
+            </script>
 
-        <script type="text/javascript"
-                src="http://api.forismatic.com/api/1.0/?method=getQuote&amp;format=jsonp&amp;lang=en&amp;jsonp=parseQuote"
-                async></script>
+            <script type="text/javascript"
+                    src="http://api.forismatic.com/api/1.0/?method=getQuote&amp;format=jsonp&amp;lang=en&amp;jsonp=parseQuote"
+                    async></script>
 
+        {% endblock %}
     {% endblock %}
+</head>
 
 
-{% endblock %}
-
+<body>
 {% block page_content %}
     <audio id="over_music">
         <source src="{{ url_for('static', filename='beepbeep.mp3') }}">
@@ -66,3 +69,5 @@
         <i id="author"></i>
     </div>
 {% endblock %}
+</body>
+</html>

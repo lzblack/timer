@@ -1,8 +1,8 @@
 {% block head %}
-        <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
-        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
 {% endblock %}
 
 
@@ -62,7 +62,8 @@
     </script>
 
     <script type="text/javascript"
-            src="http://api.forismatic.com/api/1.0/?method=getQuote&amp;format=jsonp&amp;lang=en&amp;jsonp=parseQuote"
-            async></script>
+            src="http://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=parseQuote"
+            async>
+    </script>
 {% endblock %}
 

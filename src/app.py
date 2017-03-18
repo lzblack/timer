@@ -5,7 +5,7 @@ import re
 from flask import Flask, render_template, url_for, redirect, request, flash
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'a very secret string'
+app.config['SECRET_KEY'] = 'really secret'
 
 
 @app.route('/')
@@ -30,8 +30,8 @@ def custom():
     if time[-1] not in 'smh':
         return redirect(url_for('timer', num=int(time)))
     else:
-        type = {'s': 'timer', 'm': 'minutes', 'h': 'hours'}
-        return redirect(url_for(type[time[-1]], num=int(time[:-1])))
+        types = {'s': 'timer', 'm': 'minutes', 'h': 'hours'}
+        return redirect(url_for(types[time[-1]], num=int(time[:-1])))
 
 
 @app.route('/<int:num>m')

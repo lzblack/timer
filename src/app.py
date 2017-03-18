@@ -44,12 +44,6 @@ def hours(num):
     return redirect(url_for('timer', num=num * 3600))
 
 
-# todo pomodoro mode: loop a 25-5 minutes cycle
-@app.route('/pomodoro')
-def pomodoro():
-    return render_template('index.html')
-
-
 @app.errorhandler(404)
 def page_not_fouond(e):
     flash('Error! ')

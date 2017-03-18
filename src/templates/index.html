@@ -14,16 +14,6 @@
             </script>
 
 
-            <script type="text/javascript">
-                function parseQuote(response) {
-                    document.getElementById("quote").innerHTML = response.quoteText;
-                    document.getElementById("author").innerHTML = response.quoteAuthor;
-                }
-            </script>
-
-            <script type="text/javascript"
-                    src="http://api.forismatic.com/api/1.0/?method=getQuote&amp;format=jsonp&amp;lang=en&amp;jsonp=parseQuote"
-                    async></script>
 
         {% endblock %}
     {% endblock %}
@@ -68,6 +58,18 @@
         <p id="quote"></p>
         <i id="author"></i>
     </div>
+
+
+    <script type="text/javascript">
+        function parseQuote(response) {
+            document.getElementById("quote").innerHTML = response.quoteText;
+            document.getElementById("author").innerHTML = response.quoteAuthor;
+        }
+    </script>
+
+    <script type="text/javascript"
+            src="http://api.forismatic.com/api/1.0/?method=getQuote&amp;format=jsonp&amp;lang=en&amp;jsonp=parseQuote"
+            async></script>
 {% endblock %}
 </body>
 </html>

@@ -45,7 +45,7 @@ def hours(num):
 
 
 @app.errorhandler(404)
-def page_not_fouond(e):
+def page_not_found(e):
     flash('Error! ')
     return redirect(url_for('timer', num=244))
 
